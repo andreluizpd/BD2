@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Acoes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | async">
+      <td>{{user.nome}}</td>
+      <td>{{user.idade}}</td>
+      <td>
+        <button type="button" (click)="edit(user)">Editar</button>
+        <button type="button" (click)="delete(user)">Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
