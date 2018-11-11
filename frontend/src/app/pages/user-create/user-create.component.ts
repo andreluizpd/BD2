@@ -1,3 +1,4 @@
+import { UserService } from './../../users/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
+  public message: string;
 
-  constructor() { }
+  constructor(private service: UserService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  save(user) {
+    this.service.create(user).subscribe((response: any) => {
+      this.message = response.message;
+    });
   }
-
 }

@@ -1,3 +1,16 @@
-<p>
-  user-form works!
-</p>
+<form novalidate [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="descricao">Descrição</label>
+    <input type="text" id="descricao" class="form-control" formControlName="descricao">
+  </div>
+  <div class="form-group">
+    <label for="preco">Preco</label>
+    <input type="number" id="preco" class="form-control" formControlName="preco">
+  </div>
+  <div class="form-group">
+    <label for="quantidade">Quantidade</label>
+    <input type="number" id="quantidade" class="form-control" formControlName="quantidade">
+  </div>
+  <button class="btn btn-success" [disabled]="!enableToSave">Salvar</button>
+  <button type="reset" class="btn btn-primary" [disabled]="!descricao.value">Limpar</button>
+</form>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../users/user.service';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -15,17 +15,17 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.pageUsers = this.service.list();
-    this.pageUsers.subscribe(response => { 
+    this.pageUsers.subscribe(response => {
       console.table(response);
     });
   }
 
-  update(user) { this.router.navigate(['user-update'], user._id); }
+  update(user) { this.router.navigate(['/user-update', user._id]); }
 
   remove(user) {
     this.service.remove(user._id).subscribe(responser => {
       this.pageUsers = this.service.list();
-    })
+    });
   }
 
 }

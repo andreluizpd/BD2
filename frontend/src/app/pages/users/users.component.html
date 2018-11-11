@@ -1,1 +1,5 @@
-<app-user-list [users]="pageUsers"></app-user-list>
+<app-user-list
+  [users]="pageUsers"
+  (update)="update($event)"
+  (remove)="remove($event)">
+</app-user-list>

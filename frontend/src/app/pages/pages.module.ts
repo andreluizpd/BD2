@@ -11,8 +11,8 @@ import { UsersModule } from '../users/users.module';
 @NgModule({
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    UsersModule
+    UsersModule,
+    PagesRoutingModule
   ],
   declarations: [
     UsersComponent,

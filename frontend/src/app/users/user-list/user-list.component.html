@@ -1,20 +1,20 @@
-<table>
-  <thead>
-    <tr>
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr align="center">
       <th>Descrição</th>
       <th>Preço</th>
       <th>Quantidade</th>
-      <th>Acoes</th>
+      <th>Ações</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of users | async">
       <td>{{user.descricao}}</td>
-      <td>{{user.preco}}</td>
-      <td>{{user.quantidade}}</td>
-      <td>
-        <button type="button" (click)="edit(user)">Editar</button>
-        <button type="button" (click)="delete(user)">Apagar</button>
+      <td align="center">{{user.preco}}</td>
+      <td align="center">{{user.quantidade}}</td>
+      <td align="center">
+        <button style="margin-right: 10px;" class="btn btn-sm btn-primary" type="button" (click)="edit(user)">Editar</button>
+        <button type="button" (click)="delete(user)" class="btn btn-sm btn-danger">Apagar</button>
       </td>
     </tr>
   </tbody>

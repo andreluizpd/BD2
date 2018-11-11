@@ -1,3 +1,5 @@
 <p>
-  user-update works!
+  Alterar Ususário
 </p>
+<p *ngIf="message">{{ message }}</p>
+<app-user-form [user]="user$ | async" (save)="save($event)"></app-user-form>

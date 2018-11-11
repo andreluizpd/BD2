@@ -1,3 +1,5 @@
 <p>
-  user-create works!
+  Novo Produto
 </p>
+<p *ngIf="message">{{ message }}</p>
+<app-user-form (save)="save($event)"></app-user-form>
